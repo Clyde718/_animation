@@ -1,0 +1,164 @@
+/*!*.block {*!*/
+/*!*  display: inline-block;*!*/
+/*!*  width: 500px;*!*/
+/*!*  height: 500px;*!*/
+/*!*  background-color: teal;*!*/
+/*!*  border-radius: 50%;*!*/
+/*!*  transition: 2s all ease-in;*!*/
+/*!*  margin: 100px;*!*/
+/*!*}*!*/
+
+/*!*.block:hover {*!*/
+/*!*  width: 0;*!*/
+/*!*  height: 0;*!*/
+/*!*  background-color: transparent;*!*/
+/*!*  border-radius: 0;*!*/
+/*!*  border: 50px solid transparent;*!*/
+/*!*  border-bottom: 50px solid blue;*!*/
+/*!*  border-left: 50px solid blue;*!*/
+/*!*  transform: rotate(135deg);*!*/
+/*!*}*!*/
+
+/*.div-arr {*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*  border: 2px solid black;*/
+/*  transform: rotate(45deg);*/
+/*  border-left: none;*/
+/*  border-top: none;*/
+/*  margin: 100px auto;*/
+/*  position: relative;*/
+/*  transition: 1s bottom ease;*/
+/*  bottom: 0;*/
+/*}*/
+
+/*.div-arr:before {*/
+/*  display: inline-block;*/
+/*  content: '';*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*  border: 2px solid red;*/
+/*  border-left: none;*/
+/*  border-top: none;*/
+/*  position: absolute;*/
+/*  top: -20px;*/
+/*  left: -20px;*/
+/*  transition: 1s top ease,*/
+/*              1s left ease;*/
+/*}*/
+
+/*.div-arr:hover {*/
+/*  bottom: 20px;*/
+/*}*/
+
+/*.div-arr:hover:before {*/
+/*  border: 2px solid blue;*/
+/*  border-left: none;*/
+/*  border-top: none;*/
+/*  top: -40px;*/
+/*  left: -40px;*/
+/*}*/
+
+/*.circle {*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*  background-color: #16a085;*/
+/*  border-radius: 50%;*/
+/*  margin: 0 auto;*/
+/*  animation-name: pulse;*/
+/*  animation-duration: 3s;*/
+/*  animation-iteration-count: infinite;*/
+/*  animation-direction: alternate;*/
+/*}*/
+
+/*@keyframes pulse {*/
+/*  from {*/
+/*    transform: scale(0.5);*/
+/*  }*/
+/*  to {*/
+/*    transform: scale(1.5);*/
+/*  }*/
+/*}*/
+
+.packman {
+  animation-name: moving, packman-rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top-half {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  transform: rotate(-25deg);
+  position: relative;
+  animation-name: top-eating;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 0.2s;
+}
+
+.top-half:before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: absolute;
+  top: 38px;
+  left: 89px;
+
+}
+
+.bottom-half {
+  width: 200px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  transform: rotate(202deg);
+  animation-name: bottom-eating;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 0.2s;
+}
+
+@keyframes top-eating {
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bottom-eating {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes moving {
+  24% {
+    transform: translate(1000px, 0);
+  }
+  25% {
+    transform: translate(1000px, 0) rotate(90deg);
+  }
+  49% {
+    transform: translate(1000px, 350px) rotate(90deg);
+  }
+  50% {
+    transform: translate(1000px, 350px) scale(-1, 1) rotate(0deg);
+  }
+  74% {
+    transform: translate(0, 350px) scale(-1, 1) rotate(0deg);
+  }
+  75% {
+    transform: translate(0, 350px) scale(1, 1) rotate(-90deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1, 1) rotate(-90deg);
+  }
+}

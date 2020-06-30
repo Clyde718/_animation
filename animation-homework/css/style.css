@@ -1,0 +1,47 @@
+body {
+    background-color: black;
+}
+
+.text-style {
+    font-size: 50px;
+    font-family: sans-serif;
+    color:  #ffff00;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.main-block {
+    position: absolute; 
+    width: 18em;
+    height: 50em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -9em;
+    font-size: 350%;
+    font-weight: bold;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(340px) rotateX(15deg);
+    transition: color(red);
+}
+
+.main-content {
+    position: absolute;
+    top: 100%; 
+    animation-name: scroll; 
+    animation-duration: 30s;
+    animation-delay: 3s;
+    animation-iteration-count: in;
+    animation-timing-function: linear;
+}
+
+
+@keyframes scroll {
+        0% { 
+            top: 100%; 
+        }
+
+        100% { 
+            top: 0%; 
+        }
+}
